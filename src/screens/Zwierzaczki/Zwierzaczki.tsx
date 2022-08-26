@@ -18,6 +18,8 @@ export const Zwierzaczki = () => {
   const {cats, loading: isLoadingCats, refetch: refetchCats} = useCats();
   const {dogs, loading: isLoadingDogs, refetch: refetchDogs} = useDogs();
 
+  const valid = !!dogs[0]?.url && !!cats[0]?.url;
+
   useEffect(() => {
     isDogs ? refetchDogs() : refetchCats();
   }, [isDogs]);
@@ -45,7 +47,7 @@ export const Zwierzaczki = () => {
         </Pressable>
       </View>
       <View style={styles.container}>
-        {isLoadingCats || isLoadingDogs ? (
+        {(isLoadingCats || isLoadingDogs) && valid ? (
           <View style={styles.image}>
             <ActivityIndicator
               size={'large'}
@@ -55,7 +57,7 @@ export const Zwierzaczki = () => {
           </View>
         ) : (
           <Image
-            source={{uri: isDogs ? dogs[0].url : cats[0].url}}
+            source={{uri: isDogs ? dogs[0]?.url : cats[0]?.url}}
             style={styles.image}
           />
         )}

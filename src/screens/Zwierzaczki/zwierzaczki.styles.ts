@@ -28,7 +28,7 @@ export const useStyles = () =>
     pressableText: {
       fontSize: 20,
       fontFamily: fonts.regular,
-      color: colors.darkGrey,
+      color: colors.lightGrey,
     },
     pressableTextChecked: {
       fontSize: 20,

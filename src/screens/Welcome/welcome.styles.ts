@@ -1,10 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../utils';
 
 export const useStyles = () =>
   StyleSheet.create({
     main: {
-      backgroundColor: colors.background,
+      backgroundColor: 'rgba(244,212,252,1)',
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
