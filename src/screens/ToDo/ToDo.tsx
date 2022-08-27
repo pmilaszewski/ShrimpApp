@@ -94,6 +94,7 @@ export const ToDo = () => {
           placeholder={'Dodaj bojowe zadanie'}
           value={newTodo}
           onChangeText={text => setNewTodo(text)}
+          onSubmitEditing={handleAdd}
         />
         <Pressable
           style={[styles.pressable, {opacity: disabledAdd ? 0.6 : 1}]}
