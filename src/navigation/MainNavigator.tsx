@@ -88,11 +88,11 @@ const TabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name={'Plan'}
+        name={'Notatnik'}
         component={Plan}
         options={() => ({
           tabBarLabelStyle: styles.label,
-          tabBarLabel: 'Plan treningów',
+          tabBarLabel: 'Notatnik',
           tabBarIcon: ({focused}) => (
             <Icon
               name="article"

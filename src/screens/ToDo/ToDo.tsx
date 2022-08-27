@@ -32,6 +32,7 @@ export const ToDo = () => {
     const index = todos.findIndex(value => value.id === item.id);
     todos[index].done = checked;
     const temp = todos.findIndex(todo => todo.done);
+    setTodos([...todos]);
     setIsSomethingDone(temp !== -1);
   };
 
@@ -49,7 +50,6 @@ export const ToDo = () => {
   const renderTodos = (item: TODO) => (
     <View style={styles.todos} key={item.id.toString()}>
       <CheckBox
-        onFillColor={colors.background}
         onTintColor={colors.darkPink}
         onCheckColor={colors.darkPink}
         value={item.done}
@@ -94,10 +94,10 @@ export const ToDo = () => {
           placeholder={'Dodaj bojowe zadanie'}
           value={newTodo}
           onChangeText={text => setNewTodo(text)}
-          onSubmitEditing={handleAdd}
+          multiline
         />
         <Pressable
-          style={[styles.pressable, {opacity: disabledAdd ? 0.6 : 1}]}
+          style={[styles.pressable, {opacity: disabledAdd ? 0.4 : 1}]}
           onPress={handleAdd}
           disabled={disabledAdd}>
           <Icon name="add" style={styles.icon} size={24} />

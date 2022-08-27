@@ -20,7 +20,8 @@ export const useStyles = () =>
     input: {
       paddingVertical: 10,
       paddingHorizontal: 20,
-      ontFamily: fonts.regular,
+      fontFamily: fonts.regular,
+      color: colors.darkGrey,
       borderBottomColor: colors.darkPink,
       borderBottomWidth: 1,
       minWidth: '50%',
@@ -42,6 +43,7 @@ export const useStyles = () =>
     },
     todosText: {
       marginLeft: 8,
+      width: '90%',
     },
     headerContainer: {
       flexDirection: 'row',
